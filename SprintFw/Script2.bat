@@ -1,6 +1,11 @@
+javac -d . Framework/src/*.java
+
+jar -cf TestFramework/WEB-INF/lib//etu1836fw.jar etu1836
+
+
 copy Testframework/lib/etu1836fw.jar Testframework/WEB-INF/classes/lib
 
-javac -cp  Testframework/WEB-INF/lib/etu1836fw.jar -d TestFramework/src TestFramework/src/*.java
+javac -cp  Testframework/WEB-INF/lib/etu1836fw.jar -d TestFramework/WEB-INF/classes TestFramework/WEB-INF/src/*.java
 
 jar cvf etu1836fw.war -C  TestFramework .
 
