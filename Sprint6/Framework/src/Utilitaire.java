@@ -157,13 +157,11 @@ public class Utilitaire{
         obj = myClass.newInstance();
         Method[] methods=Class.forName(nom_class).getDeclaredMethods();
         ModeleView mv= new ModeleView();
-       // ModeleView mv= new ModeleView();
-        // for (int j = 0; j < methods.length; j++) {
-        //     if(methods[j].getName().compareToIgnoreCase(methode)==0){
-        //        mv=(ModeleView)Class.forName(nom_class).getDeclaredMethods()[j].invoke(obj);
-        //     }
-        // }
-        mv = (ModeleView)myClass.getDeclaredMethod(methode).invoke(obj);
+        for (int j = 0; j < methods.length; j++) {
+            if(methods[j].getName().compareToIgnoreCase(methode)==0){
+               mv=(ModeleView) obj.getClass().getDeclaredMethod(methode).invoke(obj);
+            }
+        }
        
         //valueflds[i]=String.valueOf( lstobj[i].getClass().getMethod( to_getAttribu( namefield ) ).invoke(lstobj[i]) );//invoker l'attribu et le caster en String
         return mv;

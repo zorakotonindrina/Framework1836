@@ -2,7 +2,7 @@ package etu1836.framework;
 import java.util.*;
 public class ModeleView {
     String view;
-    HashMap<String,Object> data;
+    HashMap<String,Object> data = new HashMap<>();
     
     public ModeleView(String view, HashMap<String, Object> data) {
         this.view = view;
@@ -25,7 +25,7 @@ public class ModeleView {
     }
 
     public HashMap<String, Object> getData() {
-        return data;
+        return this.data;
     }
 
     public void setData(HashMap<String, Object> data) {
