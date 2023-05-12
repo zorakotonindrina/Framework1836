@@ -1,12 +1,12 @@
 
-<%@page import="etu1836.framework.model*"%>
+<%@page import="etu1836.framework.modele.Emp"%>
 <%@page import="java.util.*"%>
 <%
-    List<Emp> list = null;
+    ArrayList<Emp> list= new ArrayList<Emp>();
     if(request.getAttribute("listemp")==null){
       out.print("tsy tonga");
     }else{
-       list = (List<Emp>) (request.getAttribute("listemp"));
+       list = (ArrayList<Emp>)request.getAttribute("listemp");
     } 
      
 %>
@@ -26,7 +26,6 @@
             <th scope="col">Numero</th>
             <th scope="col">Departement</th>
             <th scope="col">Nom</th>
-            <th scope="col">Prenom </th>
             <th scope="col"> Salaire</th>
             <th scope="col"> Job</th>
 
@@ -37,9 +36,9 @@
           <tr>
             <td><% out.print((list.get(idx).getEmpno())); %></td>
             <td><% out.print((list.get(idx).getDeptno())); %></td>
-            <td><% out.print((list.get(idx).getNom())); %></td>
+            <td><% out.print((list.get(idx).getName())); %></td>
             <td><% out.print((list.get(idx).getSalaire())); %></td>
-            <td><% out.print((list.get(idx).getJob)); %></td>
+            <td><% out.print((list.get(idx).getJob())); %></td>
           </tr>
           <%  } %>
         

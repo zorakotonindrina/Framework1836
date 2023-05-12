@@ -60,9 +60,9 @@ public class Emp{
 
     @Methods("listEmp") 
     public ModeleView  get_Emplist(){
-       // System.out.println("Nom : Rakoto");
-        //System.out.println("Nom : Rabe");
-        List<Emp> listemp = null;
+        System.out.println("Nom : Rakoto");
+        System.out.println("Nom : Rabe");
+        ArrayList<Emp> listemp = new ArrayList<Emp>();
         listemp.add(new Emp(1, 1, "Jean", 50000, "comptable"));
         listemp.add(new Emp(2, 1, "Marc", 40000, "Agent"));
         listemp.add(new Emp(3, 2, "Luc", 60000, "Manager"));
@@ -70,7 +70,6 @@ public class Emp{
         ModeleView v= new ModeleView();
         v.setView("listemp.jsp");
         v.addItem("listemp", listemp);
-        System.out.println(v.getView());
         return v;
 
     }
